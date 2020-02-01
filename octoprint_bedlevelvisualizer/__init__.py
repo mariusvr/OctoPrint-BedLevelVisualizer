@@ -78,7 +78,7 @@ class bedlevelvisualizer(octoprint.plugin.StartupPlugin,
 		if self.processing and "ok" not in line and re.match(r"^((G33.+)|(Bed.+)|(\d+\s)|(\|\s*)|(\[?\s?\+?\-?\d?\.\d+\]?\s*\,?)|(\s?\.\s*)|(NAN\,?))+$", line.strip()):
 			new_line = re.findall(r"(\+?\-?\d*\.\d*)",line)
 
-			if re.match(r"^Bed x:.+$", line.strip()):
+			if re.match(r"^Llit x:.+$", line.strip()):
 				self.old_marlin = True
 
 			if re.match(r"^G33 X.+$", line.strip()):
